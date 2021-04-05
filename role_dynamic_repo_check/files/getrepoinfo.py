@@ -20,8 +20,8 @@ import re
 import urllib.request
 
 url= sys.argv[1]
-username= sys.argv[2]
-password= sys.argv[3]
+#username= sys.argv[2]
+#password= sys.argv[3]
 
 repoPage= urllib.request.urlopen(url)
 page= BeautifulSoup(repoPage,"html.parser")

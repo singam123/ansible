@@ -1,0 +1,13 @@
+---
+- block:
+
+
+    - name: This will import the script 
+      script: "getrepoinfo.py {{ url }} {{ var_repo_user }} {{ var_repo_pass }}"
+      register: content
+    
+    - debug:
+        msg: "This is the content: {{ content }}"
+  rescue:
+    - debug:
+        msg: "Error Occured During Task: {{ ansible_failed_task.name }} With Error: {{ ansible_failed_result.msg }}"

@@ -1,9 +1,11 @@
 ---
 - block:
-
-
+    - name: set the repo main url
+      set_fact:
+        url: "http://us.archive.ubuntu.com/ubuntu/"
+        
     - name: This will import the script 
-      script: "getrepoinfo.py {{ url }} {{ var_repo_user }} {{ var_repo_pass }}"
+      script: "getrepoinfo.py {{ url }}"
       register: content
     
     - debug:
